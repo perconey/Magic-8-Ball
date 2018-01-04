@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magic8Ball", "Magic8Ball\Magic8Ball.csproj", "{0C9CB72E-6D6A-440A-8E1B-7210AEE57E8D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magic8Ball.Dashboard", "Magic8Ball\Magic8Ball.Dashboard.csproj", "{0C9CB72E-6D6A-440A-8E1B-7210AEE57E8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magic8Ball.Data", "Magic8Ball.Data\Magic8Ball.Data.csproj", "{66D2E70A-4702-4060-A2EF-DF8FCD2E9AB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magic8Ball.BusinessLogic", "Magic8Ball.BusinessLogic\Magic8Ball.BusinessLogic.csproj", "{C9165B0F-1CD9-4DD2-90F7-2DC2C1FAA795}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{0C9CB72E-6D6A-440A-8E1B-7210AEE57E8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C9CB72E-6D6A-440A-8E1B-7210AEE57E8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C9CB72E-6D6A-440A-8E1B-7210AEE57E8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D2E70A-4702-4060-A2EF-DF8FCD2E9AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D2E70A-4702-4060-A2EF-DF8FCD2E9AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D2E70A-4702-4060-A2EF-DF8FCD2E9AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D2E70A-4702-4060-A2EF-DF8FCD2E9AB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9165B0F-1CD9-4DD2-90F7-2DC2C1FAA795}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9165B0F-1CD9-4DD2-90F7-2DC2C1FAA795}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9165B0F-1CD9-4DD2-90F7-2DC2C1FAA795}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9165B0F-1CD9-4DD2-90F7-2DC2C1FAA795}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
