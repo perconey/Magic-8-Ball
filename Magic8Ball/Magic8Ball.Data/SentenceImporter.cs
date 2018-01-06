@@ -1,24 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+
 
 namespace Magic8Ball.Data
 {
     public static class SentenceImporter
     {
-        public static List<KeyValuePair<int, string>> importedSentences = null;
+        public static List<KeyValuePair<int, string>> importedSentences = ImportSentences();
 
         public static List<KeyValuePair<int, string>> ImportSentences()
         {
-            List<KeyValuePair<int, string>> ret = null;
+            int currentReadingState = 0;
+            List<KeyValuePair<int, string>> ret = new List<KeyValuePair<int, string>>();
             string[] lines = System.IO.File.ReadAllLines("Resources/sentences.txt");
-            foreach(string line in lines)
+            for (int i = 0; i < lines.Length; i ++)
             {
-                ret.Add(new KeyValuePair<int, string>(1, line));
+                var isNumeric = int.TryParse(lines[i], out var n);
+                if (isNumeric)
+                {
+                    currentReadingState++;
+                }
+                else
+                {
+                    ret.Add(new KeyValuePair<int, string>(currentReadingState, lines[i]));
+                }
             }
-
             return ret;
         }
     }
