@@ -95,6 +95,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Magic8Ball.BusinessLogic\Magic8Ball.BusinessLogic.csproj">
+      <Project>{c9165b0f-1cd9-4dd2-90f7-2dc2c1faa795}</Project>
+      <Name>Magic8Ball.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Magic8Ball.Data\Magic8Ball.Data.csproj">
+      <Project>{66d2e70a-4702-4060-a2ef-df8fcd2e9ab4}</Project>
+      <Name>Magic8Ball.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

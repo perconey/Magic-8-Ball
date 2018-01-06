@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Magic8Ball.BusinessLogic
 {
-    public class Class1
+    enum AnswerType
     {
+        Affirmative = 1,
+        NonCommittal = 2,
+        Negative = 3
     }
+
 }
