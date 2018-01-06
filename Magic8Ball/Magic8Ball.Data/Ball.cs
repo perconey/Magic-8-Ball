@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Magic8Ball.Data
 {
@@ -24,7 +25,14 @@ namespace Magic8Ball.Data
 
         public string DrawSentence()
         {
-            string str = "2";
+
+            var query = from kvsent in SentenceImporter.ImportedSentences
+                        where kvsent.Key == GetRandomNumber(1, 3)
+                        select kvsent;
+            int lastEl = query.ToArray().Length;
+            var qta = query.ToArray();
+            string str = qta[GetRandomNumber(0, lastEl)].Value;
+            ChosenSentence = str;
             return str;
         }
 

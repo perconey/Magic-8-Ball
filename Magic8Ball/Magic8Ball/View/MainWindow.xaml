@@ -1,11 +1,17 @@
-﻿<Window x:Class="Magic8Ball.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ViewModel="clr-namespace:Magic8Ball.ViewModel" x:Class="Magic8Ball.MainWindow"
         mc:Ignorable="d"
-        Title="Magic 8 Ball" Height="350" Width="525">
+        Title="Magic 8 Ball" Height="350" Width="525" IsEnabled="False">
+    <Window.DataContext>
+        <ViewModel:MainWindowViewModel/>
+    </Window.DataContext>
     <Grid>
+        <Label Content="{Binding Xpos}" HorizontalAlignment="Left" Height="26" Margin="51,18,0,0" VerticalAlignment="Top" Width="157"/>
+        <Label Content="{Binding Ypos}" HorizontalAlignment="Left" Height="26" Margin="51,49,0,0" VerticalAlignment="Top" Width="157"/>
 
     </Grid>
 </Window>

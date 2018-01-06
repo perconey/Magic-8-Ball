@@ -5,7 +5,24 @@ namespace Magic8Ball.Data
 {
     public static class SentenceImporter
     {
-        public static List<KeyValuePair<int, string>> importedSentences = ImportSentences();
+        private static List<KeyValuePair<int, string>> _importedSentences = null;
+
+        public static List<KeyValuePair<int, string>> ImportedSentences
+        {
+            get
+            {
+                //not thread safe
+                if(_importedSentences == null)
+                {
+                    _importedSentences = ImportSentences();
+                }
+                return _importedSentences;
+            }
+            set
+            {
+                _importedSentences = ImportSentences();
+            }
+        }
 
         public static List<KeyValuePair<int, string>> ImportSentences()
         {
