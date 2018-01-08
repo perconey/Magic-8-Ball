@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ViewModel="clr-namespace:Magic8Ball.ViewModel" x:Class="Magic8Ball.MainWindow"
         mc:Ignorable="d"
-        AllowsTransparency="True" OpacityMask="White" WindowStyle="None" 
+        Background="Transparent" AllowsTransparency="True" OpacityMask="White" WindowStyle="None" 
         Title="Magic 8 Ball" Height="640" Width="627" IsEnabled="False">
     <Window.DataContext>
         <ViewModel:MainWindowViewModel/>
