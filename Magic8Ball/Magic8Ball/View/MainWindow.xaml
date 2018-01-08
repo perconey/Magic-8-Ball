@@ -5,13 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ViewModel="clr-namespace:Magic8Ball.ViewModel" x:Class="Magic8Ball.MainWindow"
         mc:Ignorable="d"
-        Title="Magic 8 Ball" Height="350" Width="525" IsEnabled="False">
+        AllowsTransparency="True" OpacityMask="White" WindowStyle="None" 
+        Title="Magic 8 Ball" Height="640" Width="627" IsEnabled="False">
     <Window.DataContext>
         <ViewModel:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <Label Content="{Binding Xpos}" HorizontalAlignment="Left" Height="26" Margin="51,18,0,0" VerticalAlignment="Top" Width="157"/>
-        <Label Content="{Binding Ypos}" HorizontalAlignment="Left" Height="26" Margin="51,49,0,0" VerticalAlignment="Top" Width="157"/>
-
+        <Image Name="imgBackground" Source="/Resources/circle.png" Stretch="Fill" />
     </Grid>
 </Window>

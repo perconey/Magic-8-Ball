@@ -11,7 +11,6 @@ namespace Magic8Ball.ViewModel
     class MainWindowViewModel : INotifyPropertyChanged
     {
 
-        MainWindow window = new MainWindow();
         private int _xpos;
         private int _ypos;
 
