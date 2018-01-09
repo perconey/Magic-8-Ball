@@ -10,7 +10,7 @@ namespace Magic8Ball.ViewModel
 {
     class MainWindowViewModel : INotifyPropertyChanged
     {
-
+        private string _drawnSentece;
         private int _xpos;
         private int _ypos;
 
@@ -32,6 +32,16 @@ namespace Magic8Ball.ViewModel
                 NotifyPropertyChanged("xpos");
             }
         }
+
+        public string DrawnSentece {
+            get => _drawnSentece;
+            set
+            {
+                _drawnSentece = value;
+                NotifyPropertyChanged("DrawnSentence");
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void NotifyPropertyChanged(string propertyName)

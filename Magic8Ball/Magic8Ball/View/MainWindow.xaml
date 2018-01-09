@@ -12,5 +12,6 @@
     </Window.DataContext>
     <Grid>
         <Image Name="imgBackground" Source="/Resources/circle.png" Stretch="Fill" />
+        <Label Content="{Binding DrawnSentence}" HorizontalAlignment="Left" Height="80" Margin="148,340,0,0" VerticalAlignment="Top" Width="312"/>
     </Grid>
 </Window>
