@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace Magic8Ball.Data
 {
-    class Ball
+    public class Ball
     {
         private string chosenSentence;
 

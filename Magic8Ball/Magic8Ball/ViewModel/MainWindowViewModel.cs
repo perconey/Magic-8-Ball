@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Magic8Ball.Data;
+using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
 
@@ -13,10 +15,17 @@ namespace Magic8Ball.ViewModel
         private string _drawnSentece;
         private int _xpos;
         private int _ypos;
+        public ICommand onSentenceDraw;
+        private Ball b = new Ball();
 
         public MainWindowViewModel()
         {
-            
+            onSentenceDraw = new RelayCommand(OnSentenceDraw, o => true);
+        }
+
+        public void OnSentenceDraw(object o)
+        {
+            DrawnSentece = b.DrawSentence();
         }
 
         private Point p = new Point(50, 50);
