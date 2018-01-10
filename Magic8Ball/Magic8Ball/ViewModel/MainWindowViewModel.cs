@@ -13,41 +13,32 @@ namespace Magic8Ball.ViewModel
     class MainWindowViewModel : INotifyPropertyChanged
     {
         private string _drawnSentece;
-        private int _xpos;
-        private int _ypos;
-        public ICommand onSentenceDraw;
+        public ICommand OnSentenceButtonClick { get; set; }
         private Ball b = new Ball();
 
         public MainWindowViewModel()
         {
-            onSentenceDraw = new RelayCommand(OnSentenceDraw, o => true);
+            OnSentenceButtonClick = new RelayCommand(OnSentenceDraw, o => true);
         }
 
         public void OnSentenceDraw(object o)
         {
-            DrawnSentece = b.DrawSentence();
+            DrawnSentence = b.DrawSentence();
         }
 
         private Point p = new Point(50, 50);
-        public int Xpos
+
+        public string DrawnSentence
         {
             get
             {
-                return _xpos;
-            }   
-            set
-            {
-                _xpos = value;
-                NotifyPropertyChanged("xpos");
+                return _drawnSentece;
             }
-        }
-
-        public string DrawnSentece {
-            get => _drawnSentece;
             set
             {
                 _drawnSentece = value;
                 NotifyPropertyChanged("DrawnSentence");
+                MessageBox.Show("Drawn");
             }
         }
 

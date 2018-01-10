@@ -6,13 +6,15 @@
         xmlns:ViewModel="clr-namespace:Magic8Ball.ViewModel" x:Class="Magic8Ball.MainWindow"
         mc:Ignorable="d"
         Background="Transparent" AllowsTransparency="True" OpacityMask="White" WindowStyle="None" 
-        Title="Magic 8 Ball" Height="640" Width="627" IsEnabled="False">
+        Title="Magic 8 Ball" Height="640" Width="627">
     <Window.DataContext>
         <ViewModel:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
         <Image Name="imgBackground" Source="/Resources/circle.png" Stretch="Fill" />
-        <Label Content="{Binding DrawnSentence}" HorizontalAlignment="Left" Height="80" Margin="148,340,0,0" VerticalAlignment="Top" Width="312"/>
-        <Button Content="Button"  HorizontalAlignment="Left" Height="68" Margin="192,405,0,0" VerticalAlignment="Top" Width="252"/>
+
+        <Button Content="Button" Command="{Binding OnSentenceButtonClick}" HorizontalAlignment="Left" Height="39" Margin="223,421,0,0" VerticalAlignment="Top" Width="187" BorderBrush="White" Background="White" Foreground="Red"/>
+        <TextBlock Text="{Binding DrawnSentence}" HorizontalAlignment="Left" Height="75" Margin="223,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Background="White" Foreground="#FFE0BDBD"/>
     </Grid>
 </Window>
+ 
