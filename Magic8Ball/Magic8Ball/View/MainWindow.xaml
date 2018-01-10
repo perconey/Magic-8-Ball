@@ -7,6 +7,21 @@
         mc:Ignorable="d"
         Background="Transparent" AllowsTransparency="True" OpacityMask="White" WindowStyle="None" 
         Title="Magic 8 Ball" Height="640" Width="627">
+    <Window.Resources>
+        <Style x:Key="TextBlockStyle1" TargetType="{x:Type TextBlock}">
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="TextTrimming" Value="None"/>
+            <Setter Property="OpacityMask" Value="#FFA2FF00"/>
+            <Setter Property="Background" Value="{x:Null}"/>
+            <Setter Property="Foreground" Value="#FF37853E"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="LineHeight" Value="Auto"/>
+            <Setter Property="FontFamily" Value="Segoe UI Black"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </Window.Resources>
     <Window.DataContext>
         <ViewModel:MainWindowViewModel/>
     </Window.DataContext>
@@ -14,7 +29,7 @@
         <Image Name="imgBackground" Source="/Resources/circle.png" Stretch="Fill" />
 
         <Button Content="Button" Command="{Binding OnSentenceButtonClick}" HorizontalAlignment="Left" Height="39" Margin="223,421,0,0" VerticalAlignment="Top" Width="187" BorderBrush="White" Background="White" Foreground="Red"/>
-        <TextBlock Text="{Binding DrawnSentence}" HorizontalAlignment="Left" Height="75" Margin="223,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Background="White" Foreground="#FFE0BDBD"/>
+        <TextBlock Text="{Binding DrawnSentence}" Height="75" Margin="223,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Style="{DynamicResource TextBlockStyle1}"/>
     </Grid>
 </Window>
  
