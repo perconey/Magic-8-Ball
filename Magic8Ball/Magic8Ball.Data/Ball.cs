@@ -25,15 +25,10 @@ namespace Magic8Ball.Data
 
         public string DrawSentence()
         {
-
-            var query = from kvsent in SentenceImporter.ImportedSentences
-                        where kvsent.Key == GetRandomNumber(1, 3)
-                        select kvsent;
-            var qta = query.ToArray();
-            int lastEl = qta.Length - 1;
-            string str = qta[GetRandomNumber(0, lastEl)].Value;
-            ChosenSentence = str;
-            return str;
+            var imps = SentenceImporter.ImportedSentences;
+            var len = SentenceImporter.ISLenght;
+            ChosenSentence = imps[GetRandomNumber(0, len - 1)].Value;
+            return ChosenSentence;
         }
 
     }
