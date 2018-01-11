@@ -24,5 +24,12 @@ namespace Magic8Ball
         {
             InitializeComponent();
         }
+
+        //This is definetely not the most MVVM purist solution of closing window problem
+        //but let's consider this as a KISS principle example ;)
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

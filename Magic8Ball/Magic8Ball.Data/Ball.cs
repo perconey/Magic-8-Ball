@@ -29,8 +29,8 @@ namespace Magic8Ball.Data
             var query = from kvsent in SentenceImporter.ImportedSentences
                         where kvsent.Key == GetRandomNumber(1, 3)
                         select kvsent;
-            int lastEl = query.ToArray().Length;
             var qta = query.ToArray();
+            int lastEl = qta.Length - 1;
             string str = qta[GetRandomNumber(0, lastEl)].Value;
             ChosenSentence = str;
             return str;
