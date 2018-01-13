@@ -32,7 +32,7 @@
             <Setter Property="TextTrimming" Value="None"/>
             <Setter Property="OpacityMask" Value="#FFA2FF00"/>
             <Setter Property="Background" Value="{x:Null}"/>
-            <Setter Property="Foreground" Value="#FF37853E"/>
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="TextAlignment" Value="Center"/>
             <Setter Property="LineHeight" Value="Auto"/>
@@ -56,10 +56,14 @@
                 <ImageBrush ImageSource="/Magic8Ball;component/Resources/exit.png"/>
             </Button.Background>
         </Button>
-        <Button Command="{Binding OnSentenceButtonClick}" Content="Button" HorizontalAlignment="Left" Height="34" Margin="198,514,0,0" VerticalAlignment="Top" Width="94"/>
-
+        <Button Command="{Binding OnSentenceButtonClick}" Style="{DynamicResource MyButtonStyle}" HorizontalAlignment="Left" Height="319" Margin="154,167,0,0" VerticalAlignment="Top" Width="339">
+            <Button.Background>
+                <ImageBrush ImageSource="/Magic8Ball;component/Resources/innercircle.png"/>
+            </Button.Background>
+        </Button>
+        <Image HorizontalAlignment="Left" Height="220" Margin="212,245,0,0" VerticalAlignment="Top" Width="224" Source="/Resources/bt.png"/>
     </Grid>
     <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
-   
+
 </Window>
  
