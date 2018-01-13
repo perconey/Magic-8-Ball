@@ -46,18 +46,22 @@
     </Window.DataContext>
     <Grid>
         <Image Name="imgBackground" Source="/Resources/circle.png" Stretch="Fill" />
-        <Button Command="{Binding WindowCloseCommand}" Style="{DynamicResource MyButtonStyle}" HorizontalAlignment="Left" Height="73" Margin="513,45,0,0" VerticalAlignment="Top" Width="71.517" BorderThickness="0" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click">
+        <Button Command="{Binding WindowCloseCommand}" Style="{DynamicResource MyButtonStyle}"
+                HorizontalAlignment="Left" Height="73" Margin="513,45,0,0" VerticalAlignment="Top" Width="71.517" BorderThickness="0" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Magic8Ball;component/Resources/exit.png"/>
             </Button.Background>
         </Button>
-        <Button Command="{Binding OnSentenceButtonClick}" Style="{DynamicResource MyButtonStyle}" HorizontalAlignment="Left" Height="321" Margin="154,155,0,0" VerticalAlignment="Top" Width="320">
+        <Button Command="{Binding OnSentenceButtonClick}" Style="{DynamicResource MyButtonStyle}" 
+                HorizontalAlignment="Left" Height="321" Margin="154,155,0,0" VerticalAlignment="Top" Width="320">
             <Button.Background>
                 <ImageBrush ImageSource="/Magic8Ball;component/Resources/innercircle.png"/>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Height="234" Margin="195,232,0,0" Focusable="False" Visibility="{Binding TrVis}" IsEnabled="{Binding TrEn}" VerticalAlignment="Top" Width="238" Source="/Resources/bt.png"/>
-        <TextBlock Focusable="False" Text="{Binding DrawnSentence}" Height="190" Margin="219,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Style="{DynamicResource TextBlockStyle1}" FontSize="35" HorizontalAlignment="Left" Padding="0,20,0,0">
+        <Image HorizontalAlignment="Left" Height="234" Margin="195,232,0,0" Focusable="False"
+               Visibility="{Binding TrVis}" VerticalAlignment="Top" Width="238" Source="/Resources/bt.png" IsHitTestVisible="False"/>
+        <TextBlock IsHitTestVisible="False" Focusable="False" Text="{Binding DrawnSentence}"
+                   Height="190" Margin="219,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Style="{DynamicResource TextBlockStyle1}" FontSize="35" HorizontalAlignment="Left" Padding="0,20,0,0">
             <TextBlock.Effect>
                 <BlurEffect KernelType="Gaussian" RenderingBias="Quality" Radius="4"/>
             </TextBlock.Effect>

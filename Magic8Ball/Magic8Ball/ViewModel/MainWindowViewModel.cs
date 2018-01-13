@@ -25,7 +25,6 @@ namespace Magic8Ball.ViewModel
             OnSentenceButtonClick = new RelayCommand(OnSentenceDraw, o => true);
             var w = new WindowCloseCmd();
             WindowCloseCommand = new RelayCommand(w.Execute, w.CanExecute);
-            TrEn = "false";
             TrVis = "Hidden";  
         }
         
@@ -57,14 +56,6 @@ namespace Magic8Ball.ViewModel
             {
                 NotifyPropertyChanged("TrVis");
                 trVis = value;
-            }
-        }
-
-        public string TrEn { get => trEn;
-            set
-            {
-                NotifyPropertyChanged("TrEn");
-                trEn = value;
             }
         }
 
