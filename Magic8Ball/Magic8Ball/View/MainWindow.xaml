@@ -46,22 +46,22 @@
     </Window.DataContext>
     <Grid>
         <Image Name="imgBackground" Source="/Resources/circle.png" Stretch="Fill" />
-        <TextBlock Text="{Binding DrawnSentence}" Height="270.5" Margin="95,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="447.22" Style="{DynamicResource TextBlockStyle1}" FontSize="72" HorizontalAlignment="Left">
-            <TextBlock.Effect>
-                <BlurEffect KernelType="Gaussian" RenderingBias="Quality" Radius="4"/>
-            </TextBlock.Effect>
-        </TextBlock>
         <Button Command="{Binding WindowCloseCommand}" Style="{DynamicResource MyButtonStyle}" HorizontalAlignment="Left" Height="73" Margin="513,45,0,0" VerticalAlignment="Top" Width="71.517" BorderThickness="0" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Magic8Ball;component/Resources/exit.png"/>
             </Button.Background>
         </Button>
-        <Button Command="{Binding OnSentenceButtonClick}" Style="{DynamicResource MyButtonStyle}" HorizontalAlignment="Left" Height="319" Margin="154,167,0,0" VerticalAlignment="Top" Width="339">
+        <Button Command="{Binding OnSentenceButtonClick}" Style="{DynamicResource MyButtonStyle}" HorizontalAlignment="Left" Height="321" Margin="154,155,0,0" VerticalAlignment="Top" Width="320">
             <Button.Background>
                 <ImageBrush ImageSource="/Magic8Ball;component/Resources/innercircle.png"/>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Height="220" Margin="212,245,0,0" VerticalAlignment="Top" Width="224" Source="/Resources/bt.png"/>
+        <Image HorizontalAlignment="Left" Height="234" Margin="195,232,0,0" VerticalAlignment="Top" Width="238" Source="/Resources/bt.png"/>
+        <TextBlock Text="{Binding DrawnSentence}" Height="190" Margin="219,232,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" Style="{DynamicResource TextBlockStyle1}" FontSize="35" HorizontalAlignment="Left" Padding="0,20,0,0">
+            <TextBlock.Effect>
+                <BlurEffect KernelType="Gaussian" RenderingBias="Quality" Radius="4"/>
+            </TextBlock.Effect>
+        </TextBlock>
     </Grid>
     <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
 
