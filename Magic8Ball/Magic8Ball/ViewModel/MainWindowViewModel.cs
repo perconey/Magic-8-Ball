@@ -16,18 +16,24 @@ namespace Magic8Ball.ViewModel
         public ICommand OnSentenceButtonClick { get; set; }
         public ICommand WindowCloseCommand { get; set; }
         private Ball b = new Ball();
+        private string trEn;
+        private string trVis;
+
 
         public MainWindowViewModel()
         {
             OnSentenceButtonClick = new RelayCommand(OnSentenceDraw, o => true);
             var w = new WindowCloseCmd();
             WindowCloseCommand = new RelayCommand(w.Execute, w.CanExecute);
-            
+            TrEn = "false";
+            TrVis = "Hidden";  
         }
         
         public void OnSentenceDraw(object o)
         {
             DrawnSentence = b.DrawSentence();
+            TrEn = "True";
+            TrVis = "Visible";
         }
 
         public string DrawnSentence
@@ -38,11 +44,30 @@ namespace Magic8Ball.ViewModel
             }
             set
             {
-                _drawnSentece = value;
                 NotifyPropertyChanged("DrawnSentence");
-                MessageBox.Show("Drawn");
+                _drawnSentece = value;
+               // MessageBox.Show("Drawn");
             }
         }
+
+        public string TrVis
+        {
+            get => trVis;
+            set
+            {
+                NotifyPropertyChanged("TrVis");
+                trVis = value;
+            }
+        }
+
+        public string TrEn { get => trEn;
+            set
+            {
+                NotifyPropertyChanged("TrEn");
+                trEn = value;
+            }
+        }
+
         //for future pmv usage
 
         class WindowCloseCmd : ICommand
