@@ -1,5 +1,7 @@
 ﻿using Magic8Ball.Data;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
@@ -7,6 +9,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace Magic8Ball.ViewModel
 {
@@ -16,9 +19,7 @@ namespace Magic8Ball.ViewModel
         public ICommand OnSentenceButtonClick { get; set; }
         public ICommand WindowCloseCommand { get; set; }
         private Ball b = new Ball();
-        private string trEn;
         private string trVis;
-
 
         public MainWindowViewModel()
         {
@@ -31,7 +32,6 @@ namespace Magic8Ball.ViewModel
         public void OnSentenceDraw(object o)
         {
             DrawnSentence = b.DrawSentence();
-            TrEn = "True";
             TrVis = "Visible";
         }
 

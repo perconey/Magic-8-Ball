@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ViewModel="clr-namespace:Magic8Ball.ViewModel" x:Class="Magic8Ball.MainWindow"
+        xmlns:Anims="clr-namespace:Magic8Ball.Data"
         mc:Ignorable="d"
         Background="Transparent" AllowsTransparency="True" OpacityMask="White" WindowStyle="None" 
         Title="Magic 8 Ball" Height="640" Width="627">
@@ -27,7 +28,10 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <!--Beta element fading-->
         <Style x:Key="TextBlockStyle1" TargetType="{x:Type TextBlock}">
+            <Setter Property="Visibility" Value="Collapsed" />
             <Setter Property="TextWrapping" Value="NoWrap"/>
             <Setter Property="TextTrimming" Value="None"/>
             <Setter Property="OpacityMask" Value="#FFA2FF00"/>
@@ -41,31 +45,38 @@
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
     </Window.Resources>
+    
     <Window.DataContext>
         <ViewModel:MainWindowViewModel/>
     </Window.DataContext>
+    
     <Grid>
         <Image Name="imgBackground" Source="/Resources/circle.png" Stretch="Fill" />
+        
         <Button Command="{Binding WindowCloseCommand}" Style="{DynamicResource MyButtonStyle}"
                 HorizontalAlignment="Left" Height="73" Margin="513,45,0,0" VerticalAlignment="Top" Width="71.517" BorderThickness="0" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Magic8Ball;component/Resources/exit.png"/>
             </Button.Background>
         </Button>
+        
         <Button Command="{Binding OnSentenceButtonClick}" Style="{DynamicResource MyButtonStyle}" 
                 HorizontalAlignment="Left" Height="321" Margin="154,155,0,0" VerticalAlignment="Top" Width="320">
             <Button.Background>
                 <ImageBrush ImageSource="/Magic8Ball;component/Resources/innercircle.png"/>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Height="234" Margin="195,232,0,0" Focusable="False"
+        
+        <Image HorizontalAlignment="Left" Height="234" Margin="195,232,0,0" Focusable="False" 
                Visibility="{Binding TrVis}" VerticalAlignment="Top" Width="238" Source="/Resources/bt.png" IsHitTestVisible="False"/>
-        <TextBlock IsHitTestVisible="False" Focusable="False" Text="{Binding DrawnSentence}"
+
+        <TextBlock IsHitTestVisible="False" Focusable="False" Text="{Binding DrawnSentence}" Visibility="Visible" 
                    Height="190" Margin="219,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Style="{DynamicResource TextBlockStyle1}" FontSize="35" HorizontalAlignment="Left" Padding="0,20,0,0">
             <TextBlock.Effect>
                 <BlurEffect KernelType="Gaussian" RenderingBias="Quality" Radius="4"/>
             </TextBlock.Effect>
         </TextBlock>
+        
     </Grid>
     <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
 
